@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiTestApp.MainPage">
-
+             x:Class="MauiTestApp.NewContent1">
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
@@ -28,12 +27,6 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
 
             <Border Stroke="White">
                 <Border.GestureRecognizers>
@@ -42,7 +35,7 @@
 
                 <Grid>
 
-                    <Label Text="Click me!" TextColor="Black" />
+                    <Label Text="Click me!" TextColor="White" />
 
                 </Grid>
                     
@@ -52,5 +45,5 @@
 
         </VerticalStackLayout>
     </ScrollView>
+</ContentView>
 
-</ContentPage>

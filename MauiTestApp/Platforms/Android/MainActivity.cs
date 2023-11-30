@@ -13,12 +13,16 @@ namespace MauiTestApp
         {
             base.OnCreate(savedInstanceState);
 
-            Platform.Init(this, savedInstanceState);
+            Platform.Init(this, savedInstanceState);    
 
             var mauiApp = MauiProgram.CreateMauiApp();
-            var main = new MainPage();
-
-            SetContentView(main.ToPlatform(new MauiContext(mauiApp.Services, Platform.CurrentActivity)));
+            var content = new NewContent1();
+            var mauiContext = new MauiContext(mauiApp.Services, this);
+            var window = new Window();
+            window.ToHandler(mauiContext);
+            window.AddLogicalChild(content);
+            var platform = content.ToPlatform(mauiContext);
+            SetContentView(platform);
         }
     }
 }

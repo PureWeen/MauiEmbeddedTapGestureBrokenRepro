@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using Microsoft.Maui.Platform;
 
 namespace MauiTestApp
 {
@@ -30,9 +31,12 @@ namespace MauiTestApp
             DisplayAlert("Test", "Test", "Cancel");
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+        private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
         {
-            DisplayAlert("Test", "Test", "Cancel");
+            if (Parent is NavigationPage)
+                await Navigation.PushAsync(new MainPage());
+            else
+                await DisplayAlert("Test", "Test", "Cancel");
         }
     }
 
